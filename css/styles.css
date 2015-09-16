@@ -1,12 +1,10 @@
-#show-contact {
-    display: none;
+#roll {
+  display: none;
 }
-
-.contact {
-    cursor: pointer;
-    color: #0088cc;
+#player1 {
+  display: none;
 }
-
-.contact:hover {
-    text-decoration: underline;
+#player2 {
+  display: none;
+  color: blue; 
 }

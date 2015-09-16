@@ -1,12 +1,8 @@
-describe('Contact', function() {
-  it("Creates anew contact with the given specifications", function(){
-    var testContact = new Contact("Rita", "Morena");
-    expect(testContact.firstName).to.equal("Rita");
-    expect(testContact.lastName).to.equal("Morena");
-    expect(testContact.addresses).to.eql([]);
-  });
-  it("adds the fullName method to all contacts", function() {
-    var testContact = new Contact("Sherlock","Holmes");
-    expect(testContact.fullName()).to.equal("Sherlock Holmes");
+describe('Player', function() {
+  it("will get a player name, roll score, total score", function(){
+    var testPlayer = new Player("Jeff", 24, 60);
+    expect(testContact.playerName).to.equal("Jeff");
+    expect(testContact.rollScore).to.equal(24);
+    expect(testContact.totalScore).to.equal(60);
   });
 });

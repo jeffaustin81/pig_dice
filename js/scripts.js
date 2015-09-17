@@ -27,7 +27,7 @@ Player.prototype.roundScore = function() {
 
 
 $(document).ready(function() {
-  $("#twoplayer").click(function() {
+  // $("#twoplayer").click(function() {
     var player1 = new Player("Player One", 0, 0, 0);
     var player2 = new Player("Player Two", 0, 0, 0);
 
@@ -40,6 +40,8 @@ $(document).ready(function() {
     $("#total_score1").text(player1.totalScore);
     $("#total_score2").text(player2.totalScore);
     // $("#player2roll").off();
+    $("button#player2roll").hide();
+    $("button#player2hold").hide();
 
     //player 1
     $("button#player1roll").click(function() {
@@ -52,12 +54,20 @@ $(document).ready(function() {
         // $("#player1roll").off();
         // $("#player2roll").on();
         $("button#player1roll").hide();
+        $("button#player1hold").hide();
         $("button#player2roll").show();
-
+        $("button#player2hold").show();
       }
-      var output = "&#x268" + (player1.roll - 1) + "; ";
+
+      if (player1.roll !== 0) {
+        var output = "&#x268" + (player1.roll - 1) + "; ";
+        $("#dice").fadeOut(5).fadeIn();
+        document.getElementById('dice').innerHTML = output;
+      }
+
+
       $("#roll_score1").fadeOut(300).fadeIn().val(player1.rollScore).text(player1.rollScore);
-      document.getElementById('dice').innerHTML = output;
+
 
     });
 
@@ -74,6 +84,10 @@ $(document).ready(function() {
       $("div#player2").removeClass("lightgrey");
       // $("#player1roll").off();
       // $("#player2roll").on();
+      $("button#player1roll").hide();
+      $("button#player1hold").hide();
+      $("button#player2roll").show();
+      $("button#player2hold").show();
 
     });
 
@@ -84,9 +98,18 @@ $(document).ready(function() {
         $("div#player1").removeClass("lightgrey");
         // $("#player2roll").off();
         // $("#player1roll").on();
-
-
+        $("button#player2roll").hide();
+        $("button#player2hold").hide();
+        $("button#player1roll").show();
+        $("button#player1hold").show();
       }
+
+      if (player2.roll !== 0) {
+        var output = "&#x268" + (player2.roll - 1) + "; ";
+        $("#dice").fadeOut(5).fadeIn();
+        document.getElementById('dice').innerHTML = output;
+      }
+
       $("#roll_score2").fadeOut(300).fadeIn().val(player2.rollScore).text(player2.rollScore);
     });
 
@@ -103,7 +126,10 @@ $(document).ready(function() {
       $("div#player2").addClass("lightgrey");
       // $("#player2roll").off();
       // $("#player1roll").on();
-
+      $("button#player2roll").hide();
+      $("button#player2hold").hide();
+      $("button#player1roll").show();
+      $("button#player1hold").show();
 
 
     });
@@ -111,6 +137,6 @@ $(document).ready(function() {
 
 
 
-  });
+  // });
 
 });

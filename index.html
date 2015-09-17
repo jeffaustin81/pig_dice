@@ -3,45 +3,56 @@
 
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" charset="utf-8">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.min.css" charset="utf-8">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" charset="utf-8"></script>
   <title>Pig Dice</title>
 </head>
 <div class="container">
-  <h1>Pig Dice</h1>
+  <h1 id="header">Pig Dice</h1>
   <button id="oneplayer" class="btn btn-primary">One Player</button>
 
   <button id="twoplayer" class="btn btn-danger">Two Player</button>
+  <div class=".row">
 
-  <div id="player1" class=".col-md-6">
-    <h1>Player One</h1>
-    <h3>
-      Roll Score: <span id="roll_score1"></span>
-    </h3>
-    <h3>
-      Total Score: <span id="total_score1"></span>
-    </h3>
-    <button id="player1roll" class="btn btn-success">Roll</button>
-    <button id="player1hold" class="btn btn-danger">Hold Score</button>
-  </div>
-  <div id="playeronewins">
-    <h1>Player One Wins!!!</h1>
-  </div>
-  <div id="player2" class=".col-md-6 lightgrey">
-    <h1>Player Two</h1>
-    <h3>
-      Roll Score: <span id="roll_score2"></span>
-    </h3>
-    <h3>
-      Total Score: <span id="total_score2"></span>
-    </h3>
-    <button id="player2roll" class="btn btn-success">Roll</button>
-    <button id="player2hold" class="btn btn-danger">Hold Score</button>
-  </div>
-  <div id="dice"></div>
-  <div id="playertwowins">
-    <h1>Player Two Wins!!!</h1>
+
+    <div id="player1" class=".col-md-4">
+      <h1>Player One</h1>
+      <h3>
+        Roll Score:
+        <span id="roll_score1"></span>
+      </h3>
+      <h3>
+        Total Score:
+        <span id="total_score1"></span>
+      </h3>
+      <button id="player1roll" class="btn btn-success">Roll</button>
+      <button id="player1hold" class="btn btn-danger">Hold Score</button>
+    </div>
+    <div id="playeronewins">
+      <h1>Player One Wins!!!</h1>
+    </div>
+    <div id="player2" class=".col-md-4 lightgrey">
+      <h1>Player Two</h1>
+      <h3>
+        Roll Score:
+        <span id="roll_score2"></span>
+      </h3>
+      <h3>
+        Total Score:
+        <span id="total_score2"></span>
+      </h3>
+      <button id="player2roll" class="btn btn-success">Roll</button>
+      <button id="player2hold" class="btn btn-danger">Hold Score</button>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="dice" class=".col-md-4"></div>
+    <div id="playertwowins">
+      <h1>Player Two Wins!!!</h1>
+    </div>
+
   </div>
 </div>
 

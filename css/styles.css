@@ -1,3 +1,7 @@
+#header {
+  font-size: 72px;
+  text-align: center;
+}
 #roll {
   display: none;
 }
@@ -19,5 +23,12 @@
   color: #EBEBEB;
 }
 #dice {
-  font-size: 16rem;
+  font-size: 32rem;
+  text-align: center;
+  /*background: url(../images/pig-silhouette.png);*/
+  /*background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: 900px;*/
 }

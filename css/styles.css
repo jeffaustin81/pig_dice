@@ -3,8 +3,21 @@
 }
 #player1 {
   display: none;
+  float: left;
 }
 #player2 {
   display: none;
-  color: blue; 
+  float: right;
+}
+#playeronewins {
+  display: none;
+}
+#playertwowins {
+  display: none;
+}
+.lightgrey {
+  color: #EBEBEB;
+}
+#dice {
+  font-size: 16rem;
 }

@@ -1,3 +1,16 @@
+body {
+    width: 100%;
+padding: 50px 0;
+color: #000;
+background: no-repeat center center scroll;
+background-image: url("../images/pig_background.jpg");
+background-color: #fff;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+-o-background-size: cover;
+}
+
 #header {
   font-size: 72px;
   text-align: center;
@@ -20,7 +33,7 @@
   display: none;
 }
 .lightgrey {
-  color: #EBEBEB;
+  color: #fff;
 }
 #dice {
   font-size: 32rem;

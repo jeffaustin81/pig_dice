@@ -114,6 +114,10 @@ $(document).ready(function() {
         document.getElementById('dice').innerHTML = output;
       }
 
+      $("#dice").addClass("animated flip").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+          $(this).removeClass('animated flip');
+      });
+
       $("#roll_score2").fadeOut(300).fadeIn().val(player2.rollScore).text(player2.rollScore);
     });
 

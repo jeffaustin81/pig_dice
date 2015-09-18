@@ -17,13 +17,13 @@ Player.prototype.diceRoll = function() {
     this.roll = roll;
   }
   return this.rollScore;
-}
+};
 
 //add to total
 Player.prototype.roundScore = function() {
   this.totalScore += this.rollScore;
   this.rollScore = 0;
-}
+};
 
 
 $(document).ready(function() {
@@ -61,10 +61,13 @@ $(document).ready(function() {
 
       if (player1.roll !== 0) {
         var output = "&#x268" + (player1.roll - 1) + "; ";
-        $("#dice").fadeOut(5).fadeIn();
+        // $("#dice").fadeOut(5).fadeIn();
         document.getElementById('dice').innerHTML = output;
       }
 
+      $("#dice").addClass("animated flip").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+          $(this).removeClass('animated flip');
+      });
 
       $("#roll_score1").fadeOut(300).fadeIn().val(player1.rollScore).text(player1.rollScore);
 
@@ -77,6 +80,7 @@ $(document).ready(function() {
         $("div#player2").hide();
         $("div#player1").hide();
         $("div#playeronewins").show();
+        $("#dice").addClass("animated infinite flip");
       }
       $("#total_score1").val(player1.totalScore).text(player1.totalScore);
       $("#roll_score1").val(player1.rollScore).text(player1.rollScore);

@@ -1,4 +1,0 @@
-https://daneden.github.io/animate.css/
-href = https://raw.githubusercontent.com/daneden/animate.css/master/animate.min.css
-href = https://raw.githubusercontent.com/daneden/animate.css/master/animate.css
-http://graphemica.com/%E2%9A%82

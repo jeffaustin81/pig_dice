@@ -11,6 +11,8 @@ Player.prototype.diceRoll = function() {
     var roll = (1 + Math.floor(Math.random() * 6));
     if (roll === 1) {
         this.rollScore = 0;
+        var zero = "&#x2680; ";
+        document.getElementById('dice').innerHTML = zero;
         return this.rollScore;
     } else {
         this.rollScore = this.rollScore + roll;
@@ -30,27 +32,30 @@ $(document).ready(function() {
     var player1 = new Player("Player One", 0, 0, 0);
     var player2 = new Player("Player Two", 0, 0, 0);
 
-    $("button#oneplayer").hide();
-    $("button#twoplayer").hide();
-    $("div#player1").show();
-    $("div#player2").show();
+    $("#oneplayer").hide();
+    $("#twoplayer").hide();
+    $("#player1").show();
+    $("#player2").show();
     $("#roll_score2").text(player2.rollScore);
     $("#roll_score1").text(player1.rollScore);
     $("#total_score1").text(player1.totalScore);
     $("#total_score2").text(player2.totalScore);
-    $("button#player2roll").hide();
-    $("button#player2hold").hide();
+    $("#player2roll").hide();
+    $("#player2hold").hide();
 
     //player 1
-    $("button#player1roll").click(function() {
+    $("#player1roll").click(function() {
+
         if (player1.diceRoll() === 0) {
             player1.roundScore();
-            $("div#player1").addClass("lightgrey");
-            $("div#player2").removeClass("lightgrey");
-            $("button#player1roll").hide();
-            $("button#player1hold").hide();
-            $("button#player2roll").show();
-            $("button#player2hold").show();
+            var zero = "&#x2680; ";
+            document.getElementById('dice').innerHTML = zero;
+            $("#player1").addClass("lightgrey");
+            $("#player2").removeClass("lightgrey");
+            $("#player1roll").hide();
+            $("#player1hold").hide();
+            $("#player2roll").show();
+            $("#player2hold").show();
         }
 
         if (player1.roll !== 0) {
@@ -65,36 +70,37 @@ $(document).ready(function() {
         $("#roll_score1").fadeOut(300).fadeIn().val(player1.rollScore).text(player1.rollScore);
     });
 
-    $("button#player1hold").click(function() {
+    $("#player1hold").click(function() {
         player1.roundScore();
 
         if (player1.totalScore >= 100) {
-            $("div#player2").hide();
-            $("div#player1").hide();
-            $("div#playeronewins").show();
+            $("#player2").hide();
+            $("#player1").hide();
+            $("#playeronewins").show();
+            $("#playeronewins").addClass("animated bounceInLeft");
             $("#dice").addClass("animated infinite flip");
         }
 
         $("#total_score1").val(player1.totalScore).text(player1.totalScore);
         $("#roll_score1").val(player1.rollScore).text(player1.rollScore);
-        $("div#player1").addClass("lightgrey");
-        $("div#player2").removeClass("lightgrey");
-        $("button#player1roll").hide();
-        $("button#player1hold").hide();
-        $("button#player2roll").show();
-        $("button#player2hold").show();
+        $("#player1").addClass("lightgrey");
+        $("#player2").removeClass("lightgrey");
+        $("#player1roll").hide();
+        $("#player1hold").hide();
+        $("#player2roll").show();
+        $("#player2hold").show();
 
     });
 
-    $("button#player2roll").click(function() {
+    $("#player2roll").click(function() {
         if (player2.diceRoll() === 0) {
             player2.roundScore();
-            $("div#player2").addClass("lightgrey");
-            $("div#player1").removeClass("lightgrey");
-            $("button#player2roll").hide();
-            $("button#player2hold").hide();
-            $("button#player1roll").show();
-            $("button#player1hold").show();
+            $("#player2").addClass("lightgrey");
+            $("#player1").removeClass("lightgrey");
+            $("#player2roll").hide();
+            $("#player2hold").hide();
+            $("#player1roll").show();
+            $("#player1hold").show();
         }
 
         if (player2.roll !== 0) {
@@ -110,23 +116,24 @@ $(document).ready(function() {
         $("#roll_score2").fadeOut(300).fadeIn().val(player2.rollScore).text(player2.rollScore);
     });
 
-    $("button#player2hold").click(function() {
+    $("#player2hold").click(function() {
         player2.roundScore();
 
         if (player2.totalScore >= 100) {
-            $("div#player2").hide();
-            $("div#player1").hide();
-            $("div#playertwowins").show();
+            $("#player2").hide();
+            $("#player1").hide();
+            $("#playertwowins").show();
+            $("#playertwowins").addClass("animated bounceInLeft");
             $("#dice").addClass("animated infinite flip");
         }
 
         $("#total_score2").val(player2.totalScore).text(player2.totalScore);
         $("#roll_score2").val(player2.rollScore).text(player2.rollScore);
-        $("div#player1").removeClass("lightgrey");
-        $("div#player2").addClass("lightgrey");
-        $("button#player2roll").hide();
-        $("button#player2hold").hide();
-        $("button#player1roll").show();
-        $("button#player1hold").show();
+        $("#player1").removeClass("lightgrey");
+        $("#player2").addClass("lightgrey");
+        $("#player2roll").hide();
+        $("#player2hold").hide();
+        $("#player1roll").show();
+        $("#player1hold").show();
     });
 });

@@ -27,7 +27,6 @@ Player.prototype.roundScore = function() {
 
 
 $(document).ready(function() {
-    // $("#twoplayer").click(function() {
     var player1 = new Player("Player One", 0, 0, 0);
     var player2 = new Player("Player Two", 0, 0, 0);
 
@@ -39,20 +38,15 @@ $(document).ready(function() {
     $("#roll_score1").text(player1.rollScore);
     $("#total_score1").text(player1.totalScore);
     $("#total_score2").text(player2.totalScore);
-    // $("#player2roll").off();
     $("button#player2roll").hide();
     $("button#player2hold").hide();
 
     //player 1
     $("button#player1roll").click(function() {
-        // var roll = ;
-        // Still need to evalute this if statement
         if (player1.diceRoll() === 0) {
             player1.roundScore();
             $("div#player1").addClass("lightgrey");
             $("div#player2").removeClass("lightgrey");
-            // $("#player1roll").off();
-            // $("#player2roll").on();
             $("button#player1roll").hide();
             $("button#player1hold").hide();
             $("button#player2roll").show();
@@ -61,7 +55,6 @@ $(document).ready(function() {
 
         if (player1.roll !== 0) {
             var output = "&#x268" + (player1.roll - 1) + "; ";
-            // $("#dice").fadeOut(5).fadeIn();
             document.getElementById('dice').innerHTML = output;
         }
 
@@ -70,24 +63,22 @@ $(document).ready(function() {
         });
 
         $("#roll_score1").fadeOut(300).fadeIn().val(player1.rollScore).text(player1.rollScore);
-
-
     });
 
     $("button#player1hold").click(function() {
         player1.roundScore();
+
         if (player1.totalScore >= 100) {
             $("div#player2").hide();
             $("div#player1").hide();
             $("div#playeronewins").show();
             $("#dice").addClass("animated infinite flip");
         }
+
         $("#total_score1").val(player1.totalScore).text(player1.totalScore);
         $("#roll_score1").val(player1.rollScore).text(player1.rollScore);
         $("div#player1").addClass("lightgrey");
         $("div#player2").removeClass("lightgrey");
-        // $("#player1roll").off();
-        // $("#player2roll").on();
         $("button#player1roll").hide();
         $("button#player1hold").hide();
         $("button#player2roll").show();
@@ -100,8 +91,6 @@ $(document).ready(function() {
             player2.roundScore();
             $("div#player2").addClass("lightgrey");
             $("div#player1").removeClass("lightgrey");
-            // $("#player2roll").off();
-            // $("#player1roll").on();
             $("button#player2roll").hide();
             $("button#player2hold").hide();
             $("button#player1roll").show();
@@ -123,30 +112,21 @@ $(document).ready(function() {
 
     $("button#player2hold").click(function() {
         player2.roundScore();
+
         if (player2.totalScore >= 100) {
             $("div#player2").hide();
             $("div#player1").hide();
             $("div#playertwowins").show();
             $("#dice").addClass("animated infinite flip");
-
         }
+
         $("#total_score2").val(player2.totalScore).text(player2.totalScore);
         $("#roll_score2").val(player2.rollScore).text(player2.rollScore);
         $("div#player1").removeClass("lightgrey");
         $("div#player2").addClass("lightgrey");
-        // $("#player2roll").off();
-        // $("#player1roll").on();
         $("button#player2roll").hide();
         $("button#player2hold").hide();
         $("button#player1roll").show();
         $("button#player1hold").show();
-
-
     });
-
-
-
-
-    // });
-
 });

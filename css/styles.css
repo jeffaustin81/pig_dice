@@ -9,6 +9,7 @@ background-color: #fff;
 -moz-background-size: cover;
 background-size: cover;
 -o-background-size: cover;
+overflow: hidden;
 }
 
 #header {

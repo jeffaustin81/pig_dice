@@ -19,7 +19,7 @@ If you roll a one your turn is over and you get no points_
 
 ## Technologies Used
 
-_JavaScript, Angular_
+_JavaScript_
 
 ### Legal
 
